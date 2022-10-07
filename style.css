@@ -1,10 +1,16 @@
+/* Estilos generales */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
 * {
   margin: 0;
 }
 body {
   font-family: "Montserrat", sans-serif !important;
-  background-color: #fef9f7 !important;
+  background: rgb(254, 249, 247);
+  background: linear-gradient(
+    0deg,
+    rgba(254, 249, 247, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  ) !important;
 }
 ul {
   list-style: none;
@@ -13,10 +19,12 @@ ul {
 li {
   padding-top: 1rem;
 }
+/* Estilos Navbar */
 .logo-nav {
   padding-top: 2em;
-  
 }
+
+/* Estilos Seccion principal */
 .main-section {
   height: 100vh;
   display: flex;
@@ -30,6 +38,10 @@ li {
   font-weight: 700;
   font-size: 3.5rem;
   margin-bottom: 2rem;
+  color: #000;
+}
+.punto{
+    color:#ee7333;
 }
 .tittle-p {
   font-weight: 700;
@@ -46,52 +58,78 @@ li {
   padding: 2em;
 }
 .elipse {
-  /* width: 70%; */
   height: auto;
   position: absolute;
   z-index: -1;
+  transition: transform 2s;
 }
-.block-btn {
-  background-color: #ee7333;
-  color: #ffffff;
-  border-radius: 28px;
-  border: none;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  margin-top: 1rem;
-  margin-right: 1rem;
-}
-.outline-btn {
-  background-color: #ffffff;
-  color: #ee7333;
-  border-radius: 28px;
-  border: solid 1px #ee7333;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+.elipse:hover{
+ transform: rotate(180deg);
 }
 .main-picture {
   max-width: 100%;
   height: auto;
   /* position: absolute; */
   z-index: 1;
+  transition: transform 2s;
 }
-.movil{
-  height: 60%;
-  position: absolute;
-  z-index: 1;
+.main-picture:hover{
+    transform: scale(1.05)
 }
+.block-btn {
+  background: #ee7333;
+  color: #ffffff;
+  border-radius: 28px;
+  border: none;
+  display: inline-block;
+  text-decoration: none;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  transition: all 2s;
+}
+.block-btn:hover{
+background: linear-gradient(0deg, rgba(240,101,28,1) 0%, rgba(252,160,112,1) 100%);
+color:#ffffff
+}
+.outline-btn {
+  background-color: #ffffff;
+  color: #ee7333;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 28px;
+  border: solid 1px #ee7333;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 2rem;
+  transition: background-color 2s, color 2s;
+}
+.outline-btn:hover{
+    background-color: #111111;
+    color: #ffffff;
+}
+
+/* seccion food */
 .food-section {
   background: #ffffff;
   box-shadow: 0px 14px 37px 19px rgba(126, 126, 126, 0.08);
   border-radius: 20px;
   text-align: center;
 }
+.food-img{
+    transition: all 1s;
+}
+.food-img:hover{
+    transform: rotate(0.5turn) scale(1.2);
+}
 .food-tittle {
-  color: #111111;
+  color: #111;
   font-weight: 700;
   padding: 0.5rem;
 }
@@ -107,21 +145,49 @@ li {
   padding: 0.5rem;
   font-weight: 700;
 }
+
+/* seccion slider */
+.pic-slider {
+  width: 35rem;
+  border-radius: 20px;
+}
 .tittle-slider {
   font-weight: 700;
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
+  color: #000;
 }
 .p-slider {
   font-weight: 400;
 }
-.list-food {
+
+/* Seccion producto */
+.list-product {
   font-weight: 600;
   padding: 1rem;
 }
-.icon-food {
+.icon-product {
   padding-right: 1rem;
 }
+.movil {
+    height: 50%;
+    position: absolute;
+    z-index: 1;
+    transform: translate(50%);
+    transition: all 1s;
+  }
+  .movil:hover{
+    height: 70%;
+    transform: translate(0%);
+  }
+.maquina {
+    /* height: auto; */
+    position: absolute;
+    z-index: -1;
+    height: 90%;
+  }
+
+  /* Footer */
 .footer {
   background-color: #111111;
   color: #ffffff;
@@ -138,9 +204,6 @@ li {
   font-weight: 700;
   font-size: 1.2rem;
 }
-.iconos-box {
-  text-align: center;
-}
 .icon-rs {
   padding: 2rem;
 }
@@ -148,19 +211,44 @@ li {
   padding: 0.4rem;
   margin-top: 1rem;
   margin-right: 1rem;
+  margin-bottom: 2rem;
   border: 1px solid #ffffff;
   border-radius: 10px;
 }
 
+/* media queries */
 @media (max-width: 800px) {
-    .logo-nav{
-        padding-bottom: 4em;
-    }
+  .logo-nav {
+    padding-bottom: 4em;
+  }
   .main-section {
     flex-direction: column;
     height: 150vh;
   }
-  .img-group{
+  .img-group {
     height: 100vh;
+    padding: 0%;
+  }
+  .elipse {
+    width: 100%;
+  }
+  .maquina {
+    width: 100%;
+  }
+  .pic-slider {
+    width: 20rem;
+  }
+  .maquina {
+    height: auto;
+    width: 100%;
+  }
+  .footer-row {
+    display: block !important;
+  }
+  .iconos-box{
+    text-align: left;
+  }
+  .icon-rs {
+    padding: 0.2rem;
   }
 }
